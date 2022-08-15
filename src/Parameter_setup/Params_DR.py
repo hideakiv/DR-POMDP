@@ -67,13 +67,10 @@ class Params_DR(Params.Params):
                 for i in range(self.nS):
                     if Aeq[a][i] is not None and beq[a][i] is not None:
                         self.Aeq[a][i] = np.vstack((self.Aeq[a][i],Aeq[a][i]))
-                        #print(self.beq[a][i],beq[a][i])
                         self.beq[a][i] = np.vstack((self.beq[a][i],beq[a][i]))
         self.q = [[ [] for i in range(self.nS)] for a in range(self.nA)]#base for equality constraint
         for a in range(self.nA):
             for i in range(self.nS):
-                #print(self.Aeq[a][i])
-                #print(self.beq[a][i])
                 self.q[a][i] = Normalization.getbase(self.Aeq[a][i],self.beq[a][i])
 
         self.LBprob = [MomentLPLB.MomentLPLB(a,self) for a in range(self.nA)]
