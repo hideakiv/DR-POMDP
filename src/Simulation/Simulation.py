@@ -1,5 +1,9 @@
 import numpy as np
 
+"""
+given updated prm and env, simulates the dynamics
+"""
+
 def runSimulation(prm,b0,epsilon,env,seed=None):
     ##  prm: contains policy
     if seed is not None:
