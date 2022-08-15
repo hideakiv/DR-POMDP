@@ -2,7 +2,9 @@
 import numpy as np
 import re
 
-
+"""
+Parser.parse: parses '(filename).POMDP' file
+"""
 class Parser:
     def __init__(self):
         self.discount = 1.0         # discount factor
