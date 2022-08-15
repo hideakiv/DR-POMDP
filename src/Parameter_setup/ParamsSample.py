@@ -37,13 +37,3 @@ def readSample(folder,params,a,i):
         Pai = None
 
     return Pai
-
-if __name__ == '__main__':
-    model = Parser.Parser()
-    model.parse('../../Models/ejs/ejs2.POMDP')
-    params = Params.Params("ejs2",model)
-
-    folder = '../Experiments/test'
-    stdevs = [[0.3,0.2],[0,0.1]]
-    nsamples = [[4,4],[4,4]]
-    ParamsSample.normalSample(folder,params,stdevs,nsamples)
